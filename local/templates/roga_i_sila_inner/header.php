@@ -1,4 +1,6 @@
-<!DOCTYPE>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+IncludeTemplateLangFile(__FILE__);
+?><!DOCTYPE>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->
@@ -43,12 +45,23 @@
 					<div class="inline-block">
 						<a href="/" class="logo inline-block"></a>
 					</div>
-					<nav class="top_menu grey inline-block authorize">
-						<span>Здравствуйте,</span>
-						<a href="#"><b class="user_name">Иван Владимирович</b></a>
-						<a href="#">Личный кабинет</a>
-						<a class="logout" href="#">Выйти</a>
-					</nav>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.form",
+                        "auth_form_header",
+                        Array(
+                            "FORGOT_PASSWORD_URL" => "",	// Страница забытого пароля
+                            "PROFILE_URL" => "/personal/",	// Страница профиля
+                            "REGISTER_URL" => "/auth/",	// Страница регистрации
+                            "SHOW_ERRORS" => "Y",	// Показывать ошибки
+                            "AUTH_CUSTOM_URL" => "/auth/",
+                        )
+                    );?>
+<!--					<nav class="top_menu grey inline-block authorize">-->
+<!--						<span>Здравствуйте,</span>-->
+<!--						<a href="#"><b class="user_name">Иван Владимирович</b></a>-->
+<!--						<a href="#">Личный кабинет</a>-->
+<!--						<a class="logout" href="#">Выйти</a>-->
+<!--					</nav>-->
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>

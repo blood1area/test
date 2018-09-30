@@ -1,4 +1,6 @@
-<!DOCTYPE>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+IncludeTemplateLangFile(__FILE__);
+?><!DOCTYPE>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->
@@ -42,10 +44,21 @@
 					<div class="inline-block">
 						<span class="logo inline-block"></span>
 					</div>
-					<nav class="top_menu grey inline-block">
-						<a href="#" class="register">Регистрация</a>
-						<a href="#" class="auth">Авторизация</a>
-					</nav>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.form",
+                        "auth_form_header",
+                        Array(
+                            "FORGOT_PASSWORD_URL" => "",
+                            "PROFILE_URL" => "/personal/",
+                            "REGISTER_URL" => "/auth/",
+                            "SHOW_ERRORS" => "Y",
+                            "AUTH_CUSTOM_URL" => "/auth/",
+                        )
+                    );?>
+<!--					<nav class="top_menu grey inline-block">-->
+<!--						<a href="#" class="register">Регистрация</a>-->
+<!--						<a href="#" class="auth">Авторизация</a>-->
+<!--					</nav>-->
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>
