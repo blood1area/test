@@ -87,7 +87,7 @@
 					</ul>
 					</nav>
 				</div>
-			</section>
+			</section>//
 			<section class="content">
 				<div class="work_area width_960">
 					
