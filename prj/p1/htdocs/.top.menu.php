@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Легковые", 
+		"/catalog/section1/", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(6,7,1))" 
+	),
+	Array(
+		"Внедорожники", 
+		"/catalog/section2/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Раритетные", 
+		"/catalog/section3/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Распродажа", 
+		"/catalog/sale/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новинки", 
+		"/catalog/new/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

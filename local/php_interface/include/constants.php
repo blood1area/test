@@ -1,3 +1,0 @@
-<?
-    define('BLOCK', 'WHOOOPS');
-?>
